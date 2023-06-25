@@ -54,18 +54,20 @@ class 呈现窗口类
     bool 组件按钮 = false;
     bool 居中对齐 = true;
 
-    std::wstring 主歌词 = L"任务栏歌词启动成功";
-    std::wstring 副歌词 = L"等待插件传输歌词...";
+    //std::wstring 主歌词 = L"任务栏歌词启动成功";
+    std::wstring 主歌词 = L"";
+    //std::wstring 副歌词 = L"等待插件传输歌词...";
+    std::wstring 副歌词 = L"";
 
     std::wstring 字体名称 = L"Microsoft YaHei";
 
-    D2D1::ColorF 字体颜色_浅色_主歌词 = D2D1::ColorF(0x000000, 1);
-    D2D1::ColorF 字体颜色_浅色_副歌词 = D2D1::ColorF(0x000000, 1);
+    D2D1::ColorF 字体颜色_浅色_主歌词 = D2D1::ColorF(0xFF0000, 0.8);
+    D2D1::ColorF 字体颜色_浅色_副歌词 = D2D1::ColorF(0xFF0000, 0.5);
     D2D1::ColorF 字体颜色_深色_主歌词 = D2D1::ColorF(0xFFFFFF, 1);
     D2D1::ColorF 字体颜色_深色_副歌词 = D2D1::ColorF(0xFFFFFF, 1);
 
-    DWRITE_FONT_WEIGHT 字体样式_主歌词_字重 = DWRITE_FONT_WEIGHT_NORMAL;
-    DWRITE_FONT_WEIGHT 字体样式_副歌词_字重 = DWRITE_FONT_WEIGHT_NORMAL;
+    DWRITE_FONT_WEIGHT 字体样式_主歌词_字重 = DWRITE_FONT_WEIGHT_MEDIUM;
+    DWRITE_FONT_WEIGHT 字体样式_副歌词_字重 = DWRITE_FONT_WEIGHT_SEMI_LIGHT;
     DWRITE_FONT_STYLE 字体样式_主歌词_斜体 = DWRITE_FONT_STYLE_NORMAL;
     DWRITE_FONT_STYLE 字体样式_副歌词_斜体 = DWRITE_FONT_STYLE_NORMAL;
     bool 字体样式_主歌词_下划线 = false;
@@ -76,7 +78,7 @@ class 呈现窗口类
 
     WindowAlignment 窗口位置 = WindowAlignment::WindowAlignmentLeft;
 
-    int 左边距 = 0;
+    int 左边距 = 22;
     int 右边距 = 0;
 
     DWRITE_TEXT_ALIGNMENT 对齐方式_主歌词 = DWRITE_TEXT_ALIGNMENT::DWRITE_TEXT_ALIGNMENT_LEADING;

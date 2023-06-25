@@ -177,8 +177,8 @@ void 呈现窗口类::绘制歌词(
     if (this->副歌词.empty())
     {
         D2D1_RECT_F 主歌词_矩形 = D2D1::RectF(
-            rect.left + this->DPI(10),
-            rect.top + this->DPI(10),
+            rect.left + this->DPI(7),
+            rect.top + this->DPI(15),
             rect.right - this->DPI(10),
             rect.bottom - this->DPI(10)
         );
@@ -190,7 +190,7 @@ void 呈现窗口类::绘制歌词(
             this->字体样式_主歌词_字重,
             this->字体样式_主歌词_斜体,
             DWRITE_FONT_STRETCH_NORMAL,
-            this->DPI(20),
+            this->DPI(15),
             L"zh-CN",
             &this->DWrite主歌词文本格式
         );
@@ -228,8 +228,8 @@ void 呈现窗口类::绘制歌词(
     else
     {
         D2D1_RECT_F 主歌词_矩形 = D2D1::RectF(
-            rect.left + this->DPI(5),
-            rect.top + this->DPI(5),
+            rect.left + this->DPI(7),
+            rect.top + this->DPI(9),
             rect.right - this->DPI(5),
             rect.bottom / 2.0f
         );
@@ -241,7 +241,7 @@ void 呈现窗口类::绘制歌词(
             this->字体样式_主歌词_字重,
             this->字体样式_主歌词_斜体,
             DWRITE_FONT_STRETCH_NORMAL,
-            this->DPI(15),
+            this->DPI(13),
             L"zh-CN",
             &this->DWrite主歌词文本格式
         );
@@ -274,8 +274,9 @@ void 呈现窗口类::绘制歌词(
         /******************************************/
 
         D2D1_RECT_F 副歌词_矩形 = D2D1::RectF(
-            rect.left + this->DPI(5),
-            rect.bottom / 2.0f,
+            rect.left + this->DPI(7),
+            //rect.bottom / 2.0f,
+            rect.top + this->DPI(25.8),
             rect.right - this->DPI(5),
             rect.bottom - this->DPI(5)
         );
@@ -287,7 +288,7 @@ void 呈现窗口类::绘制歌词(
             this->字体样式_副歌词_字重,
             this->字体样式_副歌词_斜体,
             DWRITE_FONT_STRETCH_NORMAL,
-            this->DPI(15),
+            this->DPI(12),
             L"zh-CN",
             &this->DWrite副歌词文本格式
         );
@@ -336,5 +337,6 @@ float 呈现窗口类::DPI(
 ) {
     auto 屏幕DPI = GetDpiForWindow(*this->窗口句柄);
     auto 新像素大小 = static_cast<float>(像素大小 * 屏幕DPI / 96);
+    //auto 新像素大小 = static_cast<float>(像素大小 * 屏幕DPI / 120);
     return 新像素大小;
 }
